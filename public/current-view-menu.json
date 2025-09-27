@@ -1,0 +1,636 @@
+{
+    "wk4": {
+        "Breakfast": {
+            "Monday": {
+                "Day of Week": [
+                    "Monday"
+                ],
+                "Main Course": [
+                    "Croissant",
+                    "English Muffins",
+                    "Canadian Bacon",
+                    "Sausage or Turkey Patty",
+                    "American Cheese",
+                    "Eggs",
+                    "Triangle Potato"
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings",
+                    "Breakfast Salad Bar",
+                    "Mango"
+                ],
+                "Your Call Station": [
+                    "Eggs & Omelet Bar"
+                ],
+                "Bakery Station": [
+                    "Lemon Poppy Seed Muffin",
+                    "Apple Turnovers"
+                ],
+                "Other Open Stations": [
+                    "Waffle & Toppings"
+                ]
+            },
+            "Tuesday": {
+                "Day of Week": [
+                    "Tuesday"
+                ],
+                "Main Course": [
+                    "Croissant",
+                    "English Muffins",
+                    "Canadian Bacon",
+                    "Sausage or Turkey Patty",
+                    "American Cheese",
+                    "Eggs",
+                    "Triangle Potato"
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings",
+                    "Breakfast Salad Bar",
+                    "Kiwi"
+                ],
+                "Your Call Station": [
+                    "Eggs & Omelet Bar"
+                ],
+                "Bakery Station": [
+                    "Blueberry Muffins",
+                    "Glazed Donuts"
+                ],
+                "Other Open Stations": [
+                    "Waffles & Toppings"
+                ]
+            },
+            "Wednesday": {
+                "Day of Week": [
+                    "Wednesday"
+                ],
+                "Main Course": [
+                    "Croissant",
+                    "English Muffins",
+                    "Canadian Bacon",
+                    "Sausage or Turkey Patty",
+                    "American Cheese",
+                    "Eggs",
+                    "Triangle Potato"
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings",
+                    "Breakfast Salad Bar",
+                    "Pineapple"
+                ],
+                "Your Call Station": [
+                    "Eggs & Omelet Bar"
+                ],
+                "Bakery Station": [
+                    "Orange Blossom Muffins",
+                    "Mini Cinnamon Rolls"
+                ],
+                "Other Open Stations": [
+                    "Waffles & Toppings",
+                    "Bagels & Toppings"
+                ]
+            },
+            "Thursday": {
+                "Day of Week": [
+                    "Thursday"
+                ],
+                "Main Course": [
+                    "Croissant",
+                    "English Muffins",
+                    "Canadian Bacon",
+                    "Sausage or Turkey Patty",
+                    "American Cheese",
+                    "Eggs",
+                    "Triangle Potato"
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings",
+                    "Breakfast Salad Bar",
+                    "Mango"
+                ],
+                "Your Call Station": [
+                    "Eggs & Omelet Bar"
+                ],
+                "Bakery Station": [
+                    "Banana Nut Muffins",
+                    "Mini Assorted Danish Pastries"
+                ],
+                "Other Open Stations": [
+                    "Waffles & Toppings"
+                ]
+            },
+            "Friday": {
+                "Day of Week": [
+                    "Friday"
+                ],
+                "Main Course": [
+                    "Croissant",
+                    "English Muffins",
+                    "Canadian Bacon",
+                    "Sausage or Turkey Patty",
+                    "American Cheese",
+                    "Eggs",
+                    "Triangle Potato"
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings",
+                    "Breakfast Salad Bar",
+                    "Cantaloupe"
+                ],
+                "Your Call Station": [
+                    "Eggs & Omelet Bar"
+                ],
+                "Bakery Station": [
+                    "Chocolate Chip Muffins",
+                    "Mini Caramel Rolls"
+                ],
+                "Other Open Stations": [
+                    "Waffles & Toppings"
+                ]
+            }
+        },
+        "Lunch": {
+            "Monday": {
+                "Day": [
+                    "Monday"
+                ],
+                "Main Course": [
+                    "Bratwurst w/Sauerkraut",
+                    "Hawaiian Cod",
+                    "Roasted Brussels Sprouts",
+                    "Vegetarian Baked Beans"
+                ],
+                "Your Call": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats": [
+                    "Orange Chicken",
+                    "Vegan Orange Chick'n",
+                    "Vegetable Egg Roll",
+                    "Brown & White Rice",
+                    "Broccoli & Water Chestnuts"
+                ],
+                "Bakery": [
+                    "Snickers Cookies",
+                    "Apple Crisp"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Supreme)",
+                    "Soups (Chicken Wild Rice, Minestrone & Garden Vegetable)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Tuesday": {
+                "Day": [
+                    "Tuesday"
+                ],
+                "Main Course": [
+                    "BBQ Chicken Breast Sandwich",
+                    "BBQ Vegan Chick'n",
+                    "Steamed Corn",
+                    "Coleslaw"
+                ],
+                "Your Call": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats": [
+                    {
+                        "Taco Bar": [
+                            "Taco Meat",
+                            "Flour Tortillas & Taco Shells",
+                            "Monterey Jack Cheese",
+                            "Sour Cream",
+                            "Picante Sauce",
+                            "Shredded Lettuce",
+                            "Sliced Black Olives",
+                            "Sliced Jalapeno Peppers",
+                            "Diced Tomatoes",
+                            "Vegetarian Refried Beans"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Ginger Molasses Cookies",
+                    "Rice Krispie Bars"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Chipotle Chicken)",
+                    "Soups (Chicken Enchilada, Minestrone & Garden Vegetable)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Wednesday": {
+                "Day": [
+                    "Wednesday"
+                ],
+                "Main Course": [
+                    "Kielbasa w/Peppers & Onions",
+                    "Mediterranean Cod",
+                    "Brown Rice",
+                    "Roasted Zucchini",
+                    "Applesauce"
+                ],
+                "Your Call": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats": [
+                    {
+                        "Sesame Chicken Wrap Bar": [
+                            "Sesame Chicken",
+                            "Flour Tortillas",
+                            "Chow Mein Noodles",
+                            "Brown Rice",
+                            "Sweet Chili Sauce",
+                            "Teriyaki Glaze",
+                            "Sriracha Mayonnaise",
+                            "Mung Bean Sprouts",
+                            "Pickled Carrots & Cucumber",
+                            "Lettuce",
+                            "Red Onion & Red Bell Pepper"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Snickers Cookies",
+                    "White Cake w/Chocolate Frosting"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Taco)",
+                    "Soups (Cream of Potato, Chicken Noodle & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Thursday": {
+                "Day": [
+                    "Thursday"
+                ],
+                "Main Course": [
+                    "French Dip Sandwich w/Au Jus",
+                    "Roasted Cod",
+                    "Grilled Portabella Mushrooms & Onions",
+                    "Green Beans",
+                    "Kettle Chips"
+                ],
+                "Your Call": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats": [
+                    {
+                        "Tostada": [
+                            "Taco Meat",
+                            "Tostada Shell",
+                            "Monterey Jack Cheese",
+                            "Sour Cream",
+                            "Pico de Gallo",
+                            "Guacamole",
+                            "Pickled Red Onions",
+                            "Diced Tomatoes",
+                            "Iceberg Lettuce"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Cranberry Walnut White Chocolate Cookies",
+                    "Scotcheroos"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Chicken Alfredo)",
+                    "Soups (Chicken Enchilada, Minestrone & Garden Vegetable)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Friday": {
+                "Day": [
+                    "Friday"
+                ],
+                "Main Course": [
+                    "Catfish Po' Boy",
+                    "Beer Battered Tofu",
+                    "Hush Puppies",
+                    "Chili Lime Superfoods Coleslaw"
+                ],
+                "Your Call": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats": [
+                    "Beef Lo Mein",
+                    "Basil Tofu Stir Fry",
+                    "Cream Cheese Wontons",
+                    "Asian Blend Vegetables"
+                ],
+                "Bakery": [
+                    "Reeses Pieces Cookies",
+                    "Double Chocolate Brownies"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Veggie)",
+                    "Soups (Chicken Wild Rice, Cream of Potato & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            }
+        },
+        "Dinner": {
+            "Monday": {
+                "Day": [
+                    "Monday"
+                ],
+                "Main Course": [
+                    "Chicken Pot Pie",
+                    "Roasted Cod",
+                    "Southern Style Biscuit",
+                    "Green Beans"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    "Sweet & Sour Pork",
+                    "Vegetable Egg Roll",
+                    "White Rice",
+                    "Asian Blend Vegetables"
+                ],
+                "Bakery": [
+                    "Snickers Cookies",
+                    "Apple Crisp"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Supreme)",
+                    "Soups (Chicken Wild Rice, Minestrone & Garden Vegetable)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Tuesday": {
+                "Day": [
+                    "Tuesday"
+                ],
+                "Main Course": [
+                    "Roasted Pork Tenderloin",
+                    "Lentil Stuffed Red Peppers",
+                    "Mediterranean Cod",
+                    "Mashed Sweet Potatoes",
+                    "Applesauce",
+                    "Peas and Carrots"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    {
+                        "Taco Bar": [
+                            "Flour Tortillas",
+                            "Taco Shells",
+                            "Taco Meat",
+                            "Shredded Cheese",
+                            "Sour Cream",
+                            "Picante Sauce",
+                            "Vegetarian Refried Beans",
+                            "Lettuce",
+                            "Black Olives",
+                            "Jalapeno Peppers",
+                            "Diced Tomatoes"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Ginger Molasses Cookies",
+                    "Rice Krispie Bars"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill Pasta Bar",
+                    "Pizza Bar",
+                    "Soups",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Wednesday": {
+                "Day": [
+                    "Wednesday"
+                ],
+                "Main Course": [
+                    "Hot Beef Sandwich",
+                    "Vegan Chick'n Breast",
+                    "Roasted Cod",
+                    "Mashed Potatoes w/Beef or Vegan Gravy",
+                    "Roasted Brussels Sprouts"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    {
+                        "Sesame Chicken Asian Wrap Bar": [
+                            "Sesame Chicken",
+                            "Flour Tortillas",
+                            "Chow Mein Noodles",
+                            "Brown Rice",
+                            "Mung Bean Sprouts",
+                            "Pickled Carrots & Cucumber",
+                            "Lettuce",
+                            "Sliced Red Onion & Red Bell Pepper",
+                            "Sweet Chili Sauce",
+                            "Teriyaki Glaze",
+                            "Sriracha Mayonnaise"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Snickers Cookies",
+                    "White Cake w/Chocolate Frosting"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Veggie)",
+                    "Soups (Cream of Potato, Chicken Noodle & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Thursday": {
+                "Day": [
+                    "Thursday"
+                ],
+                "Main Course": [
+                    "Roasted Chili Tilapia w/ Pomodoro Relish",
+                    "Vegetarian Chick'n Bruschetta",
+                    "Steamed Broccoli",
+                    "Mediterranean Quinoa",
+                    "Whole Wheat Dinner Roll"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    {
+                        "Tostada": [
+                            "Taco Meat",
+                            "Hard Shell Tostada",
+                            "Shredded Cheese",
+                            "Sour Cream",
+                            "Pico de Gallo",
+                            "Guacamole",
+                            "Lettuce",
+                            "Pickled Red Onion",
+                            "Diced Tomatoes"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Cranberry Walnut White Chocolate Cookies",
+                    "Scotcheroos"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Soup/Salad Bar",
+                    "Pizza Bar",
+                    "Pasta Bar"
+                ]
+            },
+            "Friday": {
+                "Day": [
+                    "Friday"
+                ],
+                "Main Course": [
+                    "Bayou Chicken",
+                    "Jerk Cod",
+                    "Vegetarian Dirty White Rice",
+                    "Roasted Cauliflower",
+                    "Cheddar Garlic Biscuit"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    "Beef Lo Mein",
+                    "Basil Tofu Stir Fry",
+                    "Brown & White Rice",
+                    "Cream Cheese Wontons",
+                    "Asian Blend Vegetables"
+                ],
+                "Bakery": [
+                    "Reeces Pieces Cookies",
+                    "Double Chocolate Brownies"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Veggie)",
+                    "Soups (Chicken Wild Rice, Cream of Potato & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            },
+            "Saturday": {
+                "Day": [
+                    "Saturday"
+                ],
+                "Main Course": [
+                    "Chicken Kiev",
+                    "Vegan Chick'n w/Vegan Gravy",
+                    "Roasted Cod",
+                    "Wild Rice Pilaf",
+                    "Roasted Zucchini"
+                ],
+                "Your Call Station": [
+                    "N/A"
+                ],
+                "World Eats Station": [
+                    {
+                        "Fajita Bar": [
+                            "Beef Fajita",
+                            "Flour Tortillas",
+                            "White Corn Tortilla",
+                            "Shredded Cheese",
+                            "Sour Cream",
+                            "Vegan Refried Beans",
+                            "Picante Sauce",
+                            "Guacamole",
+                            "Lettuce"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Caramel Chocolate Chip Cookies",
+                    "Cinnamon Streusel Coffee Cake"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni & Sausage)",
+                    "Soups (Chicken Enchilada, Cream of Potato & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            }
+        },
+        "Brunch": {
+            "Saturday": {
+                "Main Course": [
+                    "Scrambled Eggs w/Cheese",
+                    "Texas French Toast",
+                    "Hashbrowns",
+                    "Sausage Link"
+                ],
+                "World Eats Station": [
+                    {
+                        "Gyro Bar": [
+                            "Beef Gyro",
+                            "Vegan Falafel",
+                            "Pita Bread",
+                            "Feta Cheese",
+                            "Lettuce",
+                            "Red Onion",
+                            "Tomato",
+                            "Tzatziki Sauce"
+                        ]
+                    }
+                ],
+                "Greens Station": [
+                    "Oatmeal & Toppings"
+                ],
+                "Bakery": [
+                    "Cappuccino Muffins",
+                    "White Cake Donuts"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni & Sausage)",
+                    "Soups (Cream of Potato & Roasted Red Pepper Tomato Bisque)",
+                    "Salad Bar",
+                    "Waffles"
+                ]
+            }
+        }
+    }
+}

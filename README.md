@@ -43,3 +43,28 @@ A GitHub Actions workflow called `scrape-and-deploy` runs the scraper automatica
 - **Continuous Integration**: Automatically commits updated JSON files and deploys changes to the website
 
 This setup ensures the dining hall menus on the site are always up-to-date without manual intervention.
+
+## Setup Steps for GitHub Actions Deployment
+
+How I got the scraper and automatic deployment running:
+
+1. **Create a Personal Access Token (PAT)**  
+   - Go to **Settings → Developer settings → Personal access tokens → Fine-grained tokens**.  
+   - Click **Generate new token**. Name it whatever.  
+   - **Repository access**: Choose **Only select repositories** and select the target repo.  
+   - **Permissions**: Click **Add permissions → Contents → Access** and change it from **Read-only** to **Read and Write**.  
+   - Click **Generate token**. **Copy and save** the token securely.
+
+2. **Add the PAT as a GitHub secret**  
+   - Go to the repository **Settings → Secrets and variables → Actions → New repository secret**.  
+   - Name the secret (the same name referenced in the workflow).  
+   - Paste the token and click **Add secret**.
+
+3. **Configure GitHub Pages**  
+   - Go to **Settings → Pages → Source**.  
+   - Change the source to **GitHub Actions**.  
+
+4. **Trigger the workflow**  
+   - Either wait for the scheduled job or trigger it manually from the **Actions** tab.
+
+Once done, the workflow will automatically scrape menus, commit any JSON updates, and deploy the updated site.

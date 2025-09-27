@@ -1,0 +1,76 @@
+name: Scrape and Deploy Dining Menus
+
+on:
+  workflow_dispatch: # Manual trigger
+  schedule:
+    - cron: '30 11 * * 1' # Every Monday at 6:30 AM MN time
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  scrape-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout repository
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: false  # allow using PAT
+          fetch-depth: 0              # full history for rebase
+          ref: main                   # ensure we're on main branch
+
+      # Step 2: Setup Python
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      # Step 3: Install dependencies
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      # Step 4: Run the dining hall scraper
+      - name: Run dining hall scraper
+        run: python scrape_ust_dining_hall_menus.py
+
+      # Step 5: Commit and push JSON changes using PAT
+      - name: Commit and push JSON changes
+        env:
+          REPO_PAT: ${{ secrets.UST_DINING_HALL_MENUS_REPO_UPDATE_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add public/*.json
+          git diff --cached --quiet || git commit -m "Update dining menus [skip ci]"
+
+          # Make sure local main is up-to-date with remote to avoid push errors
+          git fetch origin main
+          git rebase origin/main || git rebase --abort
+
+          git push https://x-access-token:${REPO_PAT}@github.com/aidan-labs/UST-Dining-Hall-Menus.git main
+
+      # Step 6: Setup GitHub Pages
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Step 7: Upload the entire repository for Pages
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: '.'
+
+      # Step 8: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

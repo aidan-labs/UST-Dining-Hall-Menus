@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UST Dining Hall Menus</title>
+    <meta name="description" content="University of St. Thomas dining hall menus for The View and Northsider. Easy navigation, daily and weekly menu options.">
+    <link rel="stylesheet" href="src/styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Loading State -->
+        <div id="loading" class="loading-container">
+            <div class="loading-card">
+                <div class="loading-content">
+                    <div class="spinner"></div>
+                    <p class="loading-text">Loading dining hall menus...</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error State -->
+        <div id="error" class="error-container" style="display: none;">
+            <div class="error-card">
+                <div class="error-content">
+                    <div class="error-icon">
+                        <svg class="error-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3h18l-2 18H5L3 3z"/>
+                            <path d="M8 3l1-1h6l1 1"/>
+                        </svg>
+                    </div>
+                    <h2 class="error-title">Menu Unavailable</h2>
+                    <p id="error-message" class="error-message"></p>
+                    <button id="retry-button" class="retry-button">Try again</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main App -->
+        <div id="main-app" class="main-app" style="display: none;">
+            <div class="container">
+                <!-- Header -->
+                <header class="header">
+                    <div class="header-background"></div>
+                    <div class="header-overlay"></div>
+                    <div class="header-content">
+                        <h1 class="header-title">UST Dining Hall Menus</h1>
+                        <p class="header-description">
+                            Discover what's cooking at University of St. Thomas dining halls. 
+                            Browse daily menus for The View, Northsider, and Cornerstone Kitchen.
+                        </p>
+                    </div>
+                </header>
+
+                <!-- Filter Controls -->
+                <div class="filter-card">
+                    <div class="filter-content">
+                        <div class="filter-section">
+                            <h3 class="filter-title">Dining Hall</h3>
+                            <div class="filter-buttons">
+                                <button class="filter-button active" data-dining-hall="all">All Halls</button>
+                                <button class="filter-button" data-dining-hall="view">The View</button>
+                                <button class="filter-button" data-dining-hall="northsider">Northsider</button>
+                                <button class="filter-button" data-dining-hall="cornerstone">Cornerstone Kitchen</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3 class="filter-title">Day</h3>
+                            <div class="filter-buttons" id="day-buttons">
+                                <button class="filter-button" data-day="monday">Monday</button>
+                                <button class="filter-button" data-day="tuesday">Tuesday</button>
+                                <button class="filter-button" data-day="wednesday">Wednesday</button>
+                                <button class="filter-button" data-day="thursday">Thursday</button>
+                                <button class="filter-button" data-day="friday">Friday</button>
+                                <button class="filter-button" data-day="saturday">Saturday</button>
+                                <button class="filter-button" data-day="sunday">Sunday</button>
+                                <button class="filter-button" data-day="all">All Week</button>
+                            </div>
+                        </div>
+
+                        <div class="filter-section">
+                            <h3 class="filter-title">Meal</h3>
+                            <div class="filter-buttons" id="meal-buttons">
+                                <button class="filter-button active" data-meal="all">All Meals</button>
+                                <button class="filter-button" data-meal="breakfast">Breakfast</button>
+                                <button class="filter-button" data-meal="lunch">Lunch</button>
+                                <button class="filter-button" data-meal="brunch">Brunch</button>
+                                <button class="filter-button" data-meal="dinner">Dinner</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Menu Display -->
+                <main class="menu-main">
+                    <div id="view-menu-section" class="menu-section">
+                        <!-- The View menu rendered here -->
+                    </div>
+                    <div id="northsider-menu-section" class="menu-section">
+                        <!-- Northsider menu endered here -->
+                    </div>
+                    <div id="cornerstone-menu-section" class="menu-section">
+                        <!-- Cornerstone Kitchen menu rendered here -->
+                    </div>
+                </main>
+
+                <!-- Back to Top Button -->
+                <button id="back-to-top" class="back-to-top" aria-label="Back to top">
+                    <svg class="back-to-top-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="m18 15-6-6-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="footer-content">
+                <p class="footer-text">© <span id="current-year"></span> University of St. Thomas, Minnesota</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="src/app.js"></script>
+</body>
+</html>

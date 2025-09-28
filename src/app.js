@@ -250,15 +250,15 @@ class DiningHallApp {
         this.createMealButton('dinner', 'Dinner', mealButtons);
       }
     } else {
-      // All halls: show all available meals
-      if (!isSaturday && !isSunday) {
+      // All halls
+      if (isSaturday || isSunday) {
+        this.createMealButton('brunch', 'Brunch', mealButtons);
+        this.createMealButton('dinner', 'Dinner', mealButtons);
+      } else {
         this.createMealButton('breakfast', 'Breakfast', mealButtons);
         this.createMealButton('lunch', 'Lunch', mealButtons);
+        this.createMealButton('dinner', 'Dinner', mealButtons);
       }
-      if (includesBrunch) {
-        this.createMealButton('brunch', 'Brunch', mealButtons);
-      }
-      this.createMealButton('dinner', 'Dinner', mealButtons);
     }
   }
 

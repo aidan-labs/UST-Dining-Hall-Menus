@@ -27,8 +27,6 @@ class DiningHallApp {
       await this.loadMenuData();
       this.setupEventListeners();
       this.initializeDaySelection();
-      this.updateMealOptions();
-      this.setCurrentYear();
       this.render();
     } catch (error) {
       console.error('Error initializing app:', error);
@@ -38,23 +36,17 @@ class DiningHallApp {
   initializeDaySelection() {
     // Auto-select current day
     const currentDay = this.getCurrentDay();
-    this.setState({ selectedDay: currentDay });
+    this.state.selectedDay = currentDay;
     this.updateActiveButton('[data-day]', currentDay);
-  }
-
-  setCurrentYear() {
-    // Set the current year in the footer
-    const currentYearElement = document.getElementById('current-year');
-    if (currentYearElement) {
-      currentYearElement.textContent = new Date().getFullYear();
-    }
   }
 
   async loadMenuData() {
     try {
-      this.setState({ loading: true, error: null });
+      this.state.loading = true;
+      this.state.error = null;
+      this.render();
 
-      // Fetch all three menus in parallel
+      // Fetch all three menus
       const [viewResponse, northsiderResponse, cornerstoneResponse] = await Promise.all([
         fetch('public/current-view-menu.json'),
         fetch('public/current-northsider-menu.json'),
@@ -71,24 +63,17 @@ class DiningHallApp {
         cornerstoneResponse.json()
       ]);
 
-      this.setState({
-        viewMenu: viewData,
-        northsiderMenu: northsiderData,
-        cornerstoneMenu: cornerstoneData,
-        loading: false
-      });
+      this.state.viewMenu = viewData;
+      this.state.northsiderMenu = northsiderData;
+      this.state.cornerstoneMenu = cornerstoneData;
+      this.state.loading = false;
+      this.render();
     } catch (error) {
-      this.setState({
-        error: error.message,
-        loading: false
-      });
+      this.state.error = error.message;
+      this.state.loading = false;
+      this.render();
       console.error('Error fetching menu data:', error);
     }
-  }
-
-  setState(newState) {
-    this.state = { ...this.state, ...newState };
-    this.render();
   }
 
   setupEventListeners() {
@@ -96,9 +81,9 @@ class DiningHallApp {
     document.querySelectorAll('[data-dining-hall]').forEach(button => {
       button.addEventListener('click', (e) => {
         const diningHall = e.target.dataset.diningHall;
-        this.setState({ selectedDiningHall: diningHall });
+        this.state.selectedDiningHall = diningHall;
         this.updateActiveButton('[data-dining-hall]', diningHall);
-        this.handleDiningHallChange();
+        this.validateAndRender();
       });
     });
 
@@ -106,18 +91,9 @@ class DiningHallApp {
     document.querySelectorAll('[data-day]').forEach(button => {
       button.addEventListener('click', (e) => {
         const day = e.target.dataset.day;
-        this.setState({ selectedDay: day });
+        this.state.selectedDay = day;
         this.updateActiveButton('[data-day]', day);
-        this.handleDayChange();
-      });
-    });
-
-    // Meal filter buttons
-    document.querySelectorAll('[data-meal]').forEach(button => {
-      button.addEventListener('click', (e) => {
-        const meal = e.target.dataset.meal;
-        this.setState({ selectedMeal: meal });
-        this.updateActiveButton('[data-meal]', meal);
+        this.validateAndRender();
       });
     });
 
@@ -145,30 +121,24 @@ class DiningHallApp {
     });
   }
 
-  handleDiningHallChange() {
-    this.updateMealOptions();
-    this.validateCurrentSelections();
-  }
-
-  handleDayChange() {
-    this.updateMealOptions();
-    this.validateCurrentSelections();
-  }
-
-  validateCurrentSelections() {
+  validateAndRender() {
     const { selectedDiningHall, selectedDay, selectedMeal } = this.state;
     
     // Check if current meal selection is valid for the dining hall and day
     if (!this.isValidMealForDiningHall(selectedMeal, selectedDiningHall, selectedDay)) {
-      this.setState({ selectedMeal: 'all' });
-      this.updateActiveButton('[data-meal]', 'all');
+      this.state.selectedMeal = 'all';
     }
+    
+    this.render();
   }
 
   isValidMealForDiningHall(meal, diningHall, day) {
     const isSaturday = day === 'saturday';
     const isSunday = day === 'sunday';
     const isWeekend = isSaturday || isSunday;
+    
+    // Handling for "All Week" - all meals are valid
+    if (day === 'all') return true;
     
     // Cornerstone Kitchen: only breakfast and lunch, weekdays only (Monday-Friday)
     if (diningHall === 'cornerstone') {
@@ -190,7 +160,20 @@ class DiningHallApp {
       return meal === 'all' || meal === 'breakfast' || meal === 'lunch' || meal === 'dinner';
     }
     
-    // All halls: all meals available
+    // All halls: need to check if the meal exists on any hall for this day
+    if (diningHall === 'all') {
+      if (meal === 'all') return true;
+      
+      // Weekend logic for "All Halls"
+      if (isWeekend) {
+        return meal === 'brunch' || meal === 'dinner';
+      }
+      
+      // Weekday logic for "All Halls"
+      return meal === 'breakfast' || meal === 'lunch' || meal === 'dinner';
+    }
+    
+    // Default fallback
     return true;
   }
 
@@ -205,13 +188,14 @@ class DiningHallApp {
   }
 
   updateMealOptions() {
-    const { selectedDiningHall, selectedDay } = this.state;
+    const { selectedDiningHall, selectedDay, selectedMeal } = this.state;
     const isSaturday = selectedDay === 'saturday';
     const isSunday = selectedDay === 'sunday';
     const isWeekend = isSaturday || isSunday;
-    const includesBrunch = isSaturday || selectedDay === 'all';
     
     const mealButtons = document.getElementById('meal-buttons');
+    if (!mealButtons) return;
+    
     mealButtons.innerHTML = '';
 
     // Always show "All Meals"
@@ -226,7 +210,7 @@ class DiningHallApp {
     } else if (selectedDiningHall === 'northsider') {
       // Northsider: Monday-Friday (breakfast, lunch, dinner), Saturday (closed), Sunday (brunch, dinner)
       if (isSaturday) {
-        // Closed on Saturday - no specific meals
+        // Closed on Saturday
       } else if (isSunday) {
         this.createMealButton('brunch', 'Brunch', mealButtons);
         this.createMealButton('dinner', 'Dinner', mealButtons);
@@ -239,7 +223,7 @@ class DiningHallApp {
     } else if (selectedDiningHall === 'view') {
       // The View: Monday-Friday (breakfast, lunch, dinner), Saturday (brunch, dinner), Sunday (closed)
       if (isSunday) {
-        // Closed on Sunday - no specific meals
+        // Closed on Sunday
       } else if (isSaturday) {
         this.createMealButton('brunch', 'Brunch', mealButtons);
         this.createMealButton('dinner', 'Dinner', mealButtons);
@@ -274,8 +258,9 @@ class DiningHallApp {
 
     button.addEventListener('click', (e) => {
       const meal = e.target.dataset.meal;
-      this.setState({ selectedMeal: meal });
+      this.state.selectedMeal = meal;
       this.updateActiveButton('[data-meal]', meal);
+      this.render();
     });
 
     container.appendChild(button);
@@ -306,6 +291,9 @@ class DiningHallApp {
     document.getElementById('error').style.display = 'none';
     document.getElementById('main-app').style.display = 'block';
 
+    // Update meal options before rendering menus
+    this.updateMealOptions();
+    
     // Render menus
     this.renderMenus();
   }
@@ -354,6 +342,11 @@ class DiningHallApp {
     // Check if dining hall is closed on this day
     if (this.isDiningHallClosed(diningHall, selectedDay)) {
       return this.renderClosedMessage(diningHall, selectedDay);
+    }
+
+    // Check if meal is not served at this dining hall
+    if (this.isMealNotServed(diningHall, selectedMeal, selectedDay)) {
+      return this.renderMealNotServedMessage(diningHall, selectedMeal, selectedDay);
     }
 
     // Merge all week data (handle multiple week keys like "wk 2 & 4", "wk 4", "wk4")
@@ -420,6 +413,18 @@ class DiningHallApp {
     return false;
   }
 
+  isMealNotServed(diningHall, meal, day) {
+    // Only check when a specific meal is selected (not "all")
+    if (meal === 'all') return false;
+    
+    // Cornerstone Kitchen: only breakfast and lunch
+    if (diningHall === 'cornerstone' && meal === 'dinner') {
+      return true;
+    }
+    
+    return false;
+  }
+
   renderClosedMessage(diningHall, day) {
     const hallName = diningHall === 'view' ? 'The View' : 
                     diningHall === 'northsider' ? 'Northsider' : 
@@ -442,6 +447,35 @@ class DiningHallApp {
           </div>
           <h3 class="closed-title">Closed</h3>
           <p class="closed-text">${hallName} is closed on ${day.charAt(0).toUpperCase() + day.slice(1)}s.</p>
+        </div>
+      </div>
+    `;
+  }
+
+  renderMealNotServedMessage(diningHall, meal, day) {
+    const hallName = diningHall === 'view' ? 'The View' : 
+                    diningHall === 'northsider' ? 'Northsider' : 
+                    diningHall === 'cornerstone' ? 'Cornerstone Kitchen' : 
+                    'Dining Hall';
+    
+    const mealName = meal.charAt(0).toUpperCase() + meal.slice(1);
+    
+    return `
+      <div class="menu-section">
+        <div class="menu-header">
+          <h2 class="menu-title">${hallName}</h2>
+          <p class="menu-subtitle">${mealName}</p>
+        </div>
+        <div class="closed-message">
+          <div class="closed-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="9" y1="9" x2="15" y2="15" />
+              <line x1="15" y1="9" x2="9" y2="15" />
+            </svg>
+          </div>
+          <h3 class="closed-title">Not Available</h3>
+          <p class="closed-text">${hallName} does not serve ${meal}.</p>
         </div>
       </div>
     `;

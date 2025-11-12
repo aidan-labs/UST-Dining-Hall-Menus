@@ -456,7 +456,7 @@ body {
   height: 3rem;
   background-color: var(--primary);
   color: var(--primary-foreground);
-  border: 2px solid var(--background);
+  border: none;
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -574,7 +574,7 @@ body {
 /* Footer Styles */
 .footer {
   background-color: hsl(240 5% 96%);
-  border-top: 1px solid hsl(279 91% 25% / 0.15);
+  border-top: 1px solid var(--border);
   margin-top: 6rem;
   padding: 2rem 0;
   position: relative;
@@ -587,7 +587,7 @@ body {
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, hsl(279 91% 25% / 0.3), transparent);
+  background-color: var(--border);
 }
 
 .footer-content {

@@ -377,11 +377,18 @@
                     "Wednesday"
                 ],
                 "Carvery Station": [
-                    "Chicken Quesadilla"
+                    "Chicken Florentine Pasta Bake",
+                    "Garlic Toast",
+                    "Steamed Broccol"
                 ],
                 "Saute Station": [
-                    "Spicy Pork Bulgogi",
-                    "Sushi Rice"
+                    "Beef and Cheddar Smash Sliders",
+                    "Burger Patty on Slider Buns",
+                    "Cheese Sauce",
+                    "Burger Sauce",
+                    "Sautéed Onions",
+                    "Shoestring Fries",
+                    "Dill Pickle Chips"
                 ],
                 "Flatbreads": [
                     "Margherita",
@@ -437,9 +444,7 @@
                     "Friday"
                 ],
                 "Carvery Station": [
-                    "Chicken Florentine Pasta Bake",
-                    "Garlic Toast",
-                    "Steamed Broccoli"
+                    "Chicken Quesadilla"
                 ],
                 "Saute Station": [
                     "Detroit Trio",

@@ -94,7 +94,7 @@ body {
 }
 
 .header {
-  background: var(--primary);
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-hover) 100%);
   padding: 1rem;
   margin-bottom: 2rem;
   border-radius: 0;

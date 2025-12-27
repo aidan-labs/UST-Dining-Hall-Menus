@@ -1,0 +1,85 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UST Dining Hall Menus</title>
+  <meta name="description" content="University of St. Thomas dining hall menus for The View, Northsider, and Cornerstone Kitchen.">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="src/css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="loading" class="loading">
+      <span class="material-symbols-outlined spin">progress_activity</span>
+      <p>Loading menus...</p>
+    </div>
+
+    <div id="error" class="error" style="display: none;">
+      <span class="material-symbols-outlined">restaurant_menu</span>
+      <h2>Menu Unavailable</h2>
+      <p id="error-message"></p>
+      <button id="retry-button">Try again</button>
+    </div>
+
+    <div id="main-app" style="display: none;">
+      <div class="container">
+        <header class="header">
+          <div class="header-bg"></div>
+          <div class="header-overlay"></div>
+          <div class="header-content">
+            <h1>UST Dining Hall Menus</h1>
+            <p>Browse daily menus for The View, Northsider, and Cornerstone Kitchen</p>
+          </div>
+        </header>
+
+        <div class="filters">
+          <div class="filter-group">
+            <label>Dining Hall</label>
+            <div class="filter-buttons">
+              <button class="filter-btn active" data-dining-hall="all">All Halls</button>
+              <button class="filter-btn" data-dining-hall="view">The View</button>
+              <button class="filter-btn" data-dining-hall="northsider">Northsider</button>
+              <button class="filter-btn" data-dining-hall="cornerstone">Cornerstone</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Day</label>
+            <div class="filter-buttons" id="day-buttons">
+              <button class="filter-btn" data-day="monday">Mon</button>
+              <button class="filter-btn" data-day="tuesday">Tue</button>
+              <button class="filter-btn" data-day="wednesday">Wed</button>
+              <button class="filter-btn" data-day="thursday">Thu</button>
+              <button class="filter-btn" data-day="friday">Fri</button>
+              <button class="filter-btn" data-day="saturday">Sat</button>
+              <button class="filter-btn" data-day="sunday">Sun</button>
+              <button class="filter-btn" data-day="all">All Week</button>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <label>Meal</label>
+            <div class="filter-buttons" id="meal-buttons"></div>
+          </div>
+        </div>
+
+        <main id="menus"></main>
+
+        <button id="back-to-top" class="back-to-top">
+          <span class="material-symbols-outlined">arrow_upward</span>
+        </button>
+      </div>
+
+      <footer class="footer">
+        <p>Not affiliated with the University of St. Thomas</p>
+        <a href="https://github.com/aidan-labs/UST-Dining-Hall-Menus" class="github-link" target="_blank" rel="noopener">GitHub</a>
+      </footer>
+    </div>
+  </div>
+
+  <script src="src/js/app.js"></script>
+</body>
+</html>

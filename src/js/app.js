@@ -90,17 +90,6 @@ class DiningHallApp {
     document.getElementById('retry-button')?.addEventListener('click', () => {
       this.loadMenus();
     });
-
-    const backToTop = document.getElementById('back-to-top');
-    backToTop?.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-
-    window.addEventListener('scroll', () => {
-      if (backToTop) {
-        backToTop.classList.toggle('visible', window.pageYOffset > 300);
-      }
-    });
   }
 
   validateAndRender() {
@@ -114,7 +103,12 @@ class DiningHallApp {
   }
 
   isValidMeal(meal, hall, day) {
-    if (meal === 'all' || day === 'all') return true;
+    if (meal === 'all') return true;
+    
+    // When day is 'all', check if the meal exists across any valid combination
+    if (day === 'all') {
+      return this.getAvailableMeals(hall, day).includes(meal);
+    }
 
     const isSat = day === 'saturday';
     const isSun = day === 'sunday';
@@ -145,6 +139,65 @@ class DiningHallApp {
     return true;
   }
 
+  getAvailableMeals(hall, day) {
+    const isSat = day === 'saturday';
+    const isSun = day === 'sunday';
+    const isWeekend = isSat || isSun;
+    
+    // For 'all' days, return all meals that exist across the week for this hall
+    if (day === 'all') {
+      if (hall === 'cornerstone') {
+        // Cornerstone: only weekday breakfast & lunch
+        return ['breakfast', 'lunch'];
+      }
+      if (hall === 'northsider') {
+        // Northsider: weekday breakfast/lunch/dinner + Sunday brunch/dinner
+        return ['breakfast', 'lunch', 'dinner', 'brunch'];
+      }
+      if (hall === 'view') {
+        // View: weekday breakfast/lunch/dinner + Saturday brunch/dinner
+        return ['breakfast', 'lunch', 'dinner', 'brunch'];
+      }
+      if (hall === 'all') {
+        // All halls combined: all possible meals
+        return ['breakfast', 'lunch', 'dinner', 'brunch'];
+      }
+    }
+    
+    // For specific days, return meals available on that day
+    const meals = [];
+    
+    if (hall === 'cornerstone') {
+      if (!isWeekend) {
+        meals.push('breakfast', 'lunch');
+      }
+    } else if (hall === 'northsider') {
+      if (!isSat) {
+        if (isSun) {
+          meals.push('brunch', 'dinner');
+        } else {
+          meals.push('breakfast', 'lunch', 'dinner');
+        }
+      }
+    } else if (hall === 'view') {
+      if (!isSun) {
+        if (isSat) {
+          meals.push('brunch', 'dinner');
+        } else {
+          meals.push('breakfast', 'lunch', 'dinner');
+        }
+      }
+    } else if (hall === 'all') {
+      if (isWeekend) {
+        meals.push('brunch', 'dinner');
+      } else {
+        meals.push('breakfast', 'lunch', 'dinner');
+      }
+    }
+    
+    return meals;
+  }
+
   setActive(selector, value) {
     document.querySelectorAll(selector).forEach(btn => {
       const dataKey = Object.keys(btn.dataset)[0];
@@ -153,10 +206,13 @@ class DiningHallApp {
   }
 
   updateMealButtons() {
-    const { selectedDiningHall, selectedDay } = this.state;
-    const isSat = selectedDay === 'saturday';
-    const isSun = selectedDay === 'sunday';
-    const isWeekend = isSat || isSun;
+    const { selectedDiningHall, selectedDay, selectedMeal } = this.state;
+    const availableMeals = this.getAvailableMeals(selectedDiningHall, selectedDay);
+    
+    // Reset to 'all' if current meal is not available
+    if (selectedMeal !== 'all' && !availableMeals.includes(selectedMeal)) {
+      this.state.selectedMeal = 'all';
+    }
     
     const container = document.getElementById('meal-buttons');
     if (!container) return;
@@ -182,45 +238,15 @@ class DiningHallApp {
       container.appendChild(btn);
     };
 
-    addBtn('all', 'All Meals');
-
-    if (selectedDiningHall === 'cornerstone') {
-      if (!isWeekend) {
-        addBtn('breakfast', 'Breakfast');
-        addBtn('lunch', 'Lunch');
+    addBtn('all', 'All');
+    
+    // Add buttons for available meals
+    const mealOrder = ['breakfast', 'brunch', 'lunch', 'dinner'];
+    mealOrder.forEach(meal => {
+      if (availableMeals.includes(meal)) {
+        addBtn(meal, meal.charAt(0).toUpperCase() + meal.slice(1));
       }
-    } else if (selectedDiningHall === 'northsider') {
-      if (!isSat) {
-        if (isSun) {
-          addBtn('brunch', 'Brunch');
-          addBtn('dinner', 'Dinner');
-        } else {
-          addBtn('breakfast', 'Breakfast');
-          addBtn('lunch', 'Lunch');
-          addBtn('dinner', 'Dinner');
-        }
-      }
-    } else if (selectedDiningHall === 'view') {
-      if (!isSun) {
-        if (isSat) {
-          addBtn('brunch', 'Brunch');
-          addBtn('dinner', 'Dinner');
-        } else {
-          addBtn('breakfast', 'Breakfast');
-          addBtn('lunch', 'Lunch');
-          addBtn('dinner', 'Dinner');
-        }
-      }
-    } else {
-      if (isWeekend) {
-        addBtn('brunch', 'Brunch');
-        addBtn('dinner', 'Dinner');
-      } else {
-        addBtn('breakfast', 'Breakfast');
-        addBtn('lunch', 'Lunch');
-        addBtn('dinner', 'Dinner');
-      }
-    }
+    });
   }
 
   render() {
@@ -274,57 +300,32 @@ class DiningHallApp {
   }
 
   renderHall(hall, menu, day, meal) {
-    // No menu data at all
     if (!menu || Object.keys(menu).length === 0) {
       return `
         <div class="menu-section">
-          <div class="menu-header">
-            <h2>${this.hallNames[hall]}</h2>
-          </div>
-          <div class="closed-message">
-            <div class="closed-icon">
-              <span class="material-symbols-outlined">restaurant_menu</span>
-            </div>
-            <h3>No Menu Data</h3>
-            <p>Menu information is not currently available for ${this.hallNames[hall]}</p>
-          </div>
+          <h2 class="hall-name">${this.hallNames[hall]}</h2>
+          <p class="hall-subtitle">No menu data available</p>
         </div>
       `;
     }
 
-    // Hall is closed for the selected day
     if (day !== 'all' && this.isClosed(hall, day)) {
       return `
         <div class="menu-section">
-          <div class="menu-header">
-            <h2>${this.hallNames[hall]}</h2>
-            <p>${this.capitalize(day)}'s Menu</p>
-          </div>
-          <div class="closed-message">
-            <div class="closed-icon">
-              <span class="material-symbols-outlined">block</span>
-            </div>
-            <h3>Closed</h3>
-            <p>${this.hallNames[hall]} is closed on ${this.capitalize(day)}s</p>
-          </div>
+          <h2 class="hall-name">${this.hallNames[hall]}</h2>
+          <p class="hall-subtitle">${this.capitalize(day)}'s Menu</p>
+          <div class="closed-message">Closed on ${this.capitalize(day)}s</div>
         </div>
       `;
     }
 
-    // Specific meal is not served at this hall
     if (meal !== 'all' && this.isMealNotServed(hall, meal, day)) {
       return `
         <div class="menu-section">
-          <div class="menu-header">
-            <h2>${this.hallNames[hall]}</h2>
-            <p>${this.capitalize(meal)}</p>
-          </div>
+          <h2 class="hall-name">${this.hallNames[hall]}</h2>
+          <p class="hall-subtitle">${this.capitalize(meal)}</p>
           <div class="closed-message">
-            <div class="closed-icon">
-              <span class="material-symbols-outlined">schedule</span>
-            </div>
-            <h3>Not Available</h3>
-            <p>${this.hallNames[hall]} does not serve ${meal} ${day !== 'all' ? 'on ' + this.capitalize(day) + 's' : ''}</p>
+            ${this.capitalize(meal)} not available${day !== 'all' ? ' on ' + this.capitalize(day) + 's' : ''}
           </div>
         </div>
       `;
@@ -332,61 +333,38 @@ class DiningHallApp {
 
     const weekData = this.mergeWeeks(menu);
     
-    // Filter meals
     const mealsToShow = meal === 'all' 
       ? Object.entries(weekData)
       : Object.entries(weekData).filter(([mealName]) => mealName.toLowerCase() === meal.toLowerCase());
 
-    // No matching meals found
     if (mealsToShow.length === 0) {
       return `
         <div class="menu-section">
-          <div class="menu-header">
-            <h2>${this.hallNames[hall]}</h2>
-            <p>${meal === 'all' ? (day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`) : this.capitalize(meal)}</p>
-          </div>
-          <div class="closed-message">
-            <div class="closed-icon">
-              <span class="material-symbols-outlined">info</span>
-            </div>
-            <h3>No Menu Available</h3>
-            <p>No menu data found for the selected filters</p>
-          </div>
+          <h2 class="hall-name">${this.hallNames[hall]}</h2>
+          <p class="hall-subtitle">No menu available</p>
         </div>
       `;
     }
 
-    // Render the meals
     const mealCards = mealsToShow
       .map(([mealName, days]) => this.renderMeal(mealName, days, day))
       .filter(Boolean)
       .join('');
 
-    // If all meals were filtered out
     if (!mealCards) {
       return `
         <div class="menu-section">
-          <div class="menu-header">
-            <h2>${this.hallNames[hall]}</h2>
-            <p>${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
-          </div>
-          <div class="closed-message">
-            <div class="closed-icon">
-              <span class="material-symbols-outlined">info</span>
-            </div>
-            <h3>No Menu Available</h3>
-            <p>No menu data found for ${day === 'all' ? 'this week' : this.capitalize(day)}</p>
-          </div>
+          <h2 class="hall-name">${this.hallNames[hall]}</h2>
+          <p class="hall-subtitle">${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
+          <div class="closed-message">No menu available</div>
         </div>
       `;
     }
 
     return `
       <div class="menu-section">
-        <div class="menu-header">
-          <h2>${this.hallNames[hall]}</h2>
-          <p>${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
-        </div>
+        <h2 class="hall-name">${this.hallNames[hall]}</h2>
+        <p class="hall-subtitle">${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
         ${mealCards}
       </div>
     `;
@@ -413,28 +391,30 @@ class DiningHallApp {
   isMealNotServed(hall, meal, day) {
     if (meal === 'all') return false;
     
+    // When viewing all days, check if the meal is available at all during the week
+    if (day === 'all') {
+      return !this.getAvailableMeals(hall, day).includes(meal);
+    }
+    
     const isSat = day === 'saturday';
     const isSun = day === 'sunday';
     
-    // Cornerstone only serves breakfast and lunch on weekdays
     if (hall === 'cornerstone') {
       if (meal === 'dinner') return true;
       if (meal === 'brunch') return true;
       if ((isSat || isSun) && (meal === 'breakfast' || meal === 'lunch')) return true;
     }
     
-    // Northsider on Sunday only has brunch and dinner
     if (hall === 'northsider') {
       if (isSun && (meal === 'breakfast' || meal === 'lunch')) return true;
-      if (isSat) return true; // Closed on Saturday
-      if (!isSun && meal === 'brunch') return true; // No brunch on weekdays
+      if (isSat) return true;
+      if (!isSun && meal === 'brunch') return true;
     }
     
-    // The View on Saturday only has brunch and dinner
     if (hall === 'view') {
-      if (isSun) return true; // Closed on Sunday
+      if (isSun) return true;
       if (isSat && (meal === 'breakfast' || meal === 'lunch')) return true;
-      if (!isSat && meal === 'brunch') return true; // No brunch on weekdays
+      if (!isSat && meal === 'brunch') return true;
     }
     
     return false;
@@ -450,16 +430,10 @@ class DiningHallApp {
     return `
       <div class="meal-card">
         <div class="meal-header">
-          <div class="meal-title">
-            ${mealName}
-            <span class="meal-badge">
-              ${daysToShow.length === 1 ? daysToShow[0] : `${daysToShow.length} days`}
-            </span>
-          </div>
+          <span class="meal-name">${mealName}</span>
+          <span class="meal-badge">${daysToShow.length === 1 ? daysToShow[0] : `${daysToShow.length} days`}</span>
         </div>
-        <div class="meal-content">
-          ${daysToShow.map(d => this.renderDay(d, days[d], selectedDay)).join('')}
-        </div>
+        ${daysToShow.map(d => this.renderDay(d, days[d], selectedDay)).join('')}
       </div>
     `;
   }
@@ -481,7 +455,7 @@ class DiningHallApp {
   renderStation(name, items) {
     return `
       <div class="station">
-        <h4>${name}</h4>
+        <span class="station-name">${name}</span>
         <ul>
           ${items.map(item => {
             if (typeof item === 'string') {

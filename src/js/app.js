@@ -110,6 +110,18 @@ class DiningHallApp {
         navToggle.classList.remove('active');
       }
     });
+
+    // Close quick nav when clicking any link inside it
+    document.addEventListener('click', (e) => {
+      if (e.target.classList.contains('quick-nav-link')) {
+        const quickNav = document.getElementById('quick-nav');
+        const navToggle = document.getElementById('nav-toggle');
+        if (quickNav && navToggle) {
+          quickNav.classList.remove('active');
+          navToggle.classList.remove('active');
+        }
+      }
+    });
   }
 
   validateAndRender() {

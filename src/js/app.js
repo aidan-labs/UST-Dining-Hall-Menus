@@ -90,6 +90,26 @@ class DiningHallApp {
     document.getElementById('retry-button')?.addEventListener('click', () => {
       this.loadMenus();
     });
+
+    // Quick nav toggle
+    const navToggle = document.getElementById('nav-toggle');
+    const quickNav = document.getElementById('quick-nav');
+    
+    navToggle?.addEventListener('click', () => {
+      const isActive = quickNav.classList.toggle('active');
+      navToggle.classList.toggle('active', isActive);
+    });
+
+    // Close quick nav when clicking outside
+    document.addEventListener('click', (e) => {
+      if (quickNav && navToggle && 
+          !quickNav.contains(e.target) && 
+          !navToggle.contains(e.target) && 
+          quickNav.classList.contains('active')) {
+        quickNav.classList.remove('active');
+        navToggle.classList.remove('active');
+      }
+    });
   }
 
   validateAndRender() {
@@ -269,6 +289,7 @@ class DiningHallApp {
     this.show('main-app');
     this.updateMealButtons();
     this.renderMenus();
+    this.updateQuickNav();
   }
 
   show(...ids) {
@@ -300,9 +321,11 @@ class DiningHallApp {
   }
 
   renderHall(hall, menu, day, meal) {
+    const hallId = `hall-${hall}`;
+    
     if (!menu || Object.keys(menu).length === 0) {
       return `
-        <div class="menu-section">
+        <div class="menu-section" id="${hallId}">
           <h2 class="hall-name">${this.hallNames[hall]}</h2>
           <p class="hall-subtitle">No menu data available</p>
         </div>
@@ -311,7 +334,7 @@ class DiningHallApp {
 
     if (day !== 'all' && this.isClosed(hall, day)) {
       return `
-        <div class="menu-section">
+        <div class="menu-section" id="${hallId}">
           <h2 class="hall-name">${this.hallNames[hall]}</h2>
           <p class="hall-subtitle">${this.capitalize(day)}'s Menu</p>
           <div class="closed-message">Closed on ${this.capitalize(day)}s</div>
@@ -321,7 +344,7 @@ class DiningHallApp {
 
     if (meal !== 'all' && this.isMealNotServed(hall, meal, day)) {
       return `
-        <div class="menu-section">
+        <div class="menu-section" id="${hallId}">
           <h2 class="hall-name">${this.hallNames[hall]}</h2>
           <p class="hall-subtitle">${this.capitalize(meal)}</p>
           <div class="closed-message">
@@ -339,7 +362,7 @@ class DiningHallApp {
 
     if (mealsToShow.length === 0) {
       return `
-        <div class="menu-section">
+        <div class="menu-section" id="${hallId}">
           <h2 class="hall-name">${this.hallNames[hall]}</h2>
           <p class="hall-subtitle">No menu available</p>
         </div>
@@ -353,7 +376,7 @@ class DiningHallApp {
 
     if (!mealCards) {
       return `
-        <div class="menu-section">
+        <div class="menu-section" id="${hallId}">
           <h2 class="hall-name">${this.hallNames[hall]}</h2>
           <p class="hall-subtitle">${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
           <div class="closed-message">No menu available</div>
@@ -362,7 +385,7 @@ class DiningHallApp {
     }
 
     return `
-      <div class="menu-section">
+      <div class="menu-section" id="${hallId}">
         <h2 class="hall-name">${this.hallNames[hall]}</h2>
         <p class="hall-subtitle">${day === 'all' ? 'Weekly Menu' : `${this.capitalize(day)}'s Menu`}</p>
         ${mealCards}
@@ -477,6 +500,38 @@ class DiningHallApp {
 
   capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  updateQuickNav() {
+    const container = document.getElementById('quick-nav-content');
+    if (!container) return;
+
+    const { selectedDiningHall } = this.state;
+    const halls = selectedDiningHall === 'all' 
+      ? ['view', 'northsider', 'cornerstone']
+      : [selectedDiningHall];
+
+    let html = `
+      <div class="quick-nav-section">
+        <div class="quick-nav-title">Quick Links</div>
+        <a href="#" class="quick-nav-link" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">↑ To Top</a>
+        <a href="#" class="quick-nav-link" onclick="window.scrollTo({top: document.body.scrollHeight, behavior: 'smooth'}); return false;">↓ To Bottom</a>
+      </div>
+    `;
+
+    if (halls.length > 1) {
+      html += '<div class="quick-nav-divider"></div>';
+      html += `
+        <div class="quick-nav-section">
+          <div class="quick-nav-title">Jump to Hall</div>
+          ${halls.map(hall => `
+            <a href="#hall-${hall}" class="quick-nav-link">${this.hallNames[hall]}</a>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    container.innerHTML = html;
   }
 }
 

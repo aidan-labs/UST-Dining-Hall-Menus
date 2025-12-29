@@ -269,9 +269,17 @@ footer {
   color: #666;
 }
 
+footer p {
+  margin-bottom: 0.5rem;
+}
+
 footer a {
   color: #6b21a8;
   text-decoration: none;
+  padding-top: 0.5rem;
+  border-top: 1px solid #d1d5db;
+  display: inline-block;
+  min-width: 80px;
 }
 
 footer a:hover {

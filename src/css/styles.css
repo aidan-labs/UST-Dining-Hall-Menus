@@ -1,5 +1,21 @@
 /* styles.css */
 
+:root {
+  --color-primary: #510c76;
+  --color-primary-light: #8348ad;
+  --color-primary-lighter: #a97cca;
+  --color-accent: #9e28b5;
+  --color-gray: #98999b;
+  --color-white: #ffffff;
+  --color-black: #1a1a1a;
+  --color-text: #1a1a1a;
+  --color-text-light: #666;
+  --color-text-lighter: #525252;
+  --color-border: #e5e5e5;
+  --color-border-light: #f5f5f5;
+  --color-background: #fff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -10,8 +26,8 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #1a1a1a;
-  background: #fff;
+  color: var(--color-text);
+  background: var(--color-background);
   padding: 1rem;
   max-width: 800px;
   margin: 0 auto;
@@ -32,8 +48,8 @@ body {
 .spinner {
   width: 24px;
   height: 24px;
-  border: 2px solid #e5e5e5;
-  border-top-color: #6b21a8;
+  border: 2px solid var(--color-border);
+  border-top-color: var(--color-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -43,7 +59,7 @@ body {
 }
 
 .error button {
-  color: #6b21a8;
+  color: var(--color-primary);
   background: none;
   border: none;
   text-decoration: underline;
@@ -55,13 +71,13 @@ body {
 header {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid var(--color-border);
 }
 
 h1 {
   font-size: 1.5rem;
   font-weight: 600;
-  color: #6b21a8;
+  color: var(--color-primary);
 }
 
 /* Filters */
@@ -83,7 +99,7 @@ h1 {
 
 .filter-label {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--color-text-light);
   font-weight: 500;
   flex-shrink: 0;
   width: 100%;
@@ -100,23 +116,23 @@ h1 {
 .filter-btn {
   padding: 0.25rem 0.75rem;
   font-size: 0.875rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-border);
   border-radius: 4px;
-  background: #fff;
-  color: #666;
+  background: var(--color-white);
+  color: var(--color-text-light);
   cursor: pointer;
   transition: all 0.15s;
 }
 
 .filter-btn:hover {
-  border-color: #6b21a8;
-  color: #6b21a8;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .filter-btn.active {
-  background: #6b21a8;
-  border-color: #6b21a8;
-  color: #fff;
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
 }
 
 /* Menu Sections */
@@ -131,20 +147,20 @@ h1 {
 .hall-name {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-black);
   margin-bottom: 0.25rem;
 }
 
 .hall-subtitle {
   font-size: 0.875rem;
-  color: #666;
+  color: var(--color-text-light);
   margin-bottom: 1.5rem;
 }
 
 /* Meal Cards */
 .meal-card {
   margin-bottom: 1.5rem;
-  border: 1px solid #e5e5e5;
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   padding: 1.25rem;
 }
@@ -159,18 +175,18 @@ h1 {
   gap: 0.5rem;
   margin-bottom: 1rem;
   padding-bottom: 0.75rem;
-  border-bottom: 1px solid #f5f5f5;
+  border-bottom: 1px solid var(--color-border-light);
 }
 
 .meal-name {
   font-size: 1.125rem;
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-black);
 }
 
 .meal-badge {
   font-size: 0.75rem;
-  color: #666;
+  color: var(--color-text-light);
 }
 
 /* Day Sections */
@@ -185,7 +201,7 @@ h1 {
 .day-title {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #666;
+  color: var(--color-text-light);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 0.75rem;
@@ -206,7 +222,7 @@ h1 {
 
 .station-name {
   font-weight: 600;
-  color: #1a1a1a;
+  color: var(--color-black);
   display: inline;
 }
 
@@ -221,7 +237,7 @@ h1 {
 
 .station li {
   display: inline;
-  color: #525252;
+  color: var(--color-text-lighter);
 }
 
 .station li::after {
@@ -238,7 +254,7 @@ h1 {
 
 .subcategory-title {
   font-weight: 500;
-  color: #666;
+  color: var(--color-text-light);
 }
 
 .subcategory-items {
@@ -254,8 +270,8 @@ h1 {
 .closed-message {
   padding: 2rem 1rem;
   text-align: center;
-  color: #666;
-  border: 1px solid #e5e5e5;
+  color: var(--color-text-light);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
 }
 
@@ -263,10 +279,10 @@ h1 {
 footer {
   margin-top: 4rem;
   padding-top: 2rem;
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--color-border);
   text-align: center;
   font-size: 0.875rem;
-  color: #666;
+  color: var(--color-text-light);
 }
 
 footer p {
@@ -274,7 +290,7 @@ footer p {
 }
 
 footer a {
-  color: #6b21a8;
+  color: var(--color-primary);
   text-decoration: none;
   padding-top: 0.5rem;
   border-top: 1px solid #d1d5db;
@@ -293,8 +309,8 @@ footer a:hover {
   right: 1.5rem;
   width: 3rem;
   height: 3rem;
-  background: #6b21a8;
-  color: #fff;
+  background: var(--color-primary);
+  color: var(--color-white);
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -307,12 +323,12 @@ footer a:hover {
 }
 
 .nav-toggle:hover {
-  background: #7c3aed;
+  background: var(--color-primary-light);
   transform: scale(1.05);
 }
 
 .nav-toggle.active {
-  background: #7c3aed;
+  background: var(--color-primary-light);
 }
 
 .nav-toggle i {
@@ -323,8 +339,8 @@ footer a:hover {
   position: fixed;
   bottom: 5rem;
   right: 1.5rem;
-  background: #fff;
-  border: 1px solid #e5e5e5;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
   border-radius: 6px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 200px;
@@ -358,7 +374,7 @@ footer a:hover {
 .quick-nav-title {
   font-size: 0.75rem;
   font-weight: 600;
-  color: #666;
+  color: var(--color-text-light);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 0.5rem 0.5rem 0.25rem;
@@ -368,20 +384,20 @@ footer a:hover {
   display: block;
   padding: 0.5rem 0.5rem;
   font-size: 0.875rem;
-  color: #1a1a1a;
+  color: var(--color-black);
   text-decoration: none;
   border-radius: 4px;
   transition: background 0.15s;
 }
 
 .quick-nav-link:hover {
-  background: #f5f5f5;
-  color: #6b21a8;
+  background: var(--color-border-light);
+  color: var(--color-primary);
 }
 
 .quick-nav-divider {
   height: 1px;
-  background: #e5e5e5;
+  background: var(--color-border);
   margin: 0.5rem 0;
 }
 

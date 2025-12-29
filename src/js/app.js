@@ -531,7 +531,7 @@ class DiningHallApp {
       </div>
     `;
 
-    if (halls.length > 1) {
+    if (halls.length >= 1) {
       html += '<div class="quick-nav-divider"></div>';
       html += `
         <div class="quick-nav-section">

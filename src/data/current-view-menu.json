@@ -517,16 +517,78 @@
                 "Day": [
                     "Friday"
                 ],
-                "Unknown Station": [
-                    ""
+                "Main Course": [
+                    "Bayou Chicken",
+                    "Jerk Cod",
+                    "Vegetarian Dirty White Rice",
+                    "Roasted Cauliflower",
+                    "Cheddar Garlic Biscuit"
+                ],
+                "Your Call Station": [
+                    "Mac & Cheese Bar"
+                ],
+                "World Eats Station": [
+                    "Beef Lo Mein",
+                    "Basil Tofu Stir Fry",
+                    "Brown & White Rice",
+                    "Cream Cheese Wontons",
+                    "Asian Blend Vegetables"
+                ],
+                "Bakery": [
+                    "Reese's Pieces Cookies",
+                    "Double Chocolate Brownies"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni, Sausage, & Veggie)",
+                    "Soups (Chicken Wild Rice, Cream of Potato & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
                 ]
             },
             "Saturday": {
                 "Day": [
                     "Saturday"
                 ],
+                "Main Course": [
+                    "Chicken Kiev",
+                    "Vegan Chick'n w/Vegan Gravy",
+                    "Roasted Cod",
+                    "Wild Rice Pilaf",
+                    "Roasted Zucchini"
+                ],
                 "Unknown Station": [
                     ""
+                ],
+                "World Eats Station": [
+                    {
+                        "Fajita Bar": [
+                            "Beef Fajita",
+                            "Flour Tortillas",
+                            "White Corn Tortilla",
+                            "Shredded Cheese",
+                            "Sour Cream",
+                            "Vegan Refried Beans",
+                            "Picante Sauce",
+                            "Guacamole",
+                            "Lettuce"
+                        ]
+                    }
+                ],
+                "Bakery": [
+                    "Caramel Chocolate Chip Cookies",
+                    "Cinnamon Streusel Coffee Cake"
+                ],
+                "Other Open Stations": [
+                    "Deli",
+                    "Grill",
+                    "Pasta Bar",
+                    "Pizza Bar (Cheese, Pepperoni & Sausage)",
+                    "Soups (Chicken Enchilada, Cream of Potato & Minestrone)",
+                    "Salad Bar",
+                    "Waffles"
                 ]
             }
         },

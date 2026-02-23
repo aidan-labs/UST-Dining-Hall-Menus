@@ -1,5 +1,5 @@
 {
-    "wk 1 & 3": {
+    "wk 2 & 4": {
         "Breakfast": {
             "Monday": {
                 "Day of Week": [
@@ -12,8 +12,8 @@
                     "Pork Sausage Link"
                 ],
                 "Breakfast Bar": [
-                    "Italian Scramble",
-                    "Chocolate Chip Pancakes with Syrup",
+                    "Vegetarian Strata",
+                    "Tater Tots",
                     "Vegetarian Sausage Patty"
                 ],
                 "Salad Bar": [
@@ -21,8 +21,8 @@
                     "Oatmeal & Toppings"
                 ],
                 "Bakery Station": [
-                    "Apple Cinnamon Muffin",
-                    "Assorted Mini Danish Pastries"
+                    "Lemon Poppyseed Muffin",
+                    "Apple Turnover"
                 ],
                 "Other Open Stations": [
                     "Waffle & Toppings"
@@ -39,88 +39,8 @@
                     "Pork Sausage Link"
                 ],
                 "Breakfast Bar": [
-                    "Cheddar & Scallion Egg Bake",
-                    "Southern Style Biscuit",
-                    "Wedge Cut French Fries"
-                ],
-                "Salad Bar": [
-                    "Breakfast Yogurt Bar",
-                    "Oatmeal & Toppings"
-                ],
-                "Bakery Station": [
-                    "Mini Cinnamon Rolls",
-                    "Chocolate Chip Muffin"
-                ],
-                "Other Open Stations": [
-                    "Waffles & Toppings"
-                ]
-            },
-            "Wednesday": {
-                "Day of Week": [
-                    "Wednesday"
-                ],
-                "Carvery Station": [
-                    "Scrambled Eggs",
-                    "Country Style Biscuit and Gravy",
-                    "Hash Brown Triangles",
-                    "Pork Sausage Link"
-                ],
-                "Breakfast Bar": [
-                    "Tex Mex Egg Scramble",
-                    "Hash Brown Triangle"
-                ],
-                "Salad Bar": [
-                    "Breakfast Yogurt Bar",
-                    "Oatmeal & Toppings"
-                ],
-                "Bakery Station": [
-                    "Apple Turnover",
-                    "Orange Blossom Muffin"
-                ],
-                "Other Open Stations": [
-                    "Waffles & Toppings"
-                ]
-            },
-            "Thursday": {
-                "Day of Week": [
-                    "Thursday"
-                ],
-                "Carvery Station": [
-                    "Scrambled Eggs",
-                    "Country Style Biscuit and Gravy",
-                    "Hash Brown Triangles",
-                    "Pork Sausage Link"
-                ],
-                "Breakfast Bar": [
-                    "Haystack Egg Scramble",
-                    "Cheesy Hashbrowns",
-                    "Vegetarian Sausage Patty"
-                ],
-                "Salad Bar": [
-                    "Breakfast Yogurt Bar",
-                    "Oatmeal & Toppings"
-                ],
-                "Bakery Station": [
-                    "Cappuccino Muffins",
-                    "Glazed Cake Donut"
-                ],
-                "Other Open Stations": [
-                    "Waffles & Toppings"
-                ]
-            },
-            "Friday": {
-                "Day of Week": [
-                    "Friday"
-                ],
-                "Carvery Station": [
-                    "Scrambled Eggs",
-                    "Country Style Biscuit and Gravy",
-                    "Hash Brown Triangles",
-                    "Pork Sausage Link"
-                ],
-                "Breakfast Bar": [
-                    "Over Medium Fried Egg",
-                    "Potato O'Brien",
+                    "Scrambled Eggs with Cheese",
+                    "Tater Tots",
                     "Vegetarian Sausage Patty"
                 ],
                 "Salad Bar": [
@@ -129,82 +49,10 @@
                 ],
                 "Bakery Station": [
                     "Blueberry Muffins",
-                    "Mini Caramel Rolls"
+                    "Chocolate Frosted Donut"
                 ],
                 "Other Open Stations": [
                     "Waffles & Toppings"
-                ]
-            }
-        }
-    },
-    "wk 1": {
-        "Lunch": {
-            "Monday": {
-                "Day of Week": [
-                    "Monday"
-                ],
-                "Carvery Station": [
-                    "General Tso Chicken",
-                    "General Tso Vegetarian Chick'n",
-                    "Steamed Asian Blend Vegetables"
-                ],
-                "Saute Station": [
-                    "Crafted Mac and Cheese",
-                    "White Cheddar Cheese Sauce",
-                    "Lumache Pasta",
-                    "Cajun Chicken",
-                    "Roasted Broccoli",
-                    "Bacon Bits",
-                    "Green Onions",
-                    ""
-                ],
-                "Flatbreads": [
-                    "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
-                ],
-                "Bakery": [
-                    "Chocolate Chocolate Chip Cookies",
-                    "Coconut Caramel Devil's Food Cake"
-                ],
-                "Other Open Stations": [
-                    "Grill - Taco Bowl",
-                    "Soup/Salad Bar",
-                    "Superfoods Bar",
-                    "Waffle Bar"
-                ]
-            },
-            "Tuesday": {
-                "Day of Week": [
-                    "Tuesday"
-                ],
-                "Carvery Station": [
-                    "Greek Gyro",
-                    "French Fries"
-                ],
-                "Saute Station": [
-                    "Hot Honey Yardbird",
-                    "Chicken Tender on a Slider Bun",
-                    "Nashville Hot Honey Butter",
-                    "Bread and Butter Pickles",
-                    "Ranch Chips"
-                ],
-                "Flatbreads": [
-                    "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
-                ],
-                "Bakery": [
-                    "Oatmeal Butterscotch Cookie",
-                    "Rice Krispie Bars"
-                ],
-                "Other Open Stations": [
-                    "Grill - Taco Bowl",
-                    "Soup/Salad Bar",
-                    "Superfoods Bar",
-                    "Waffle Bar"
                 ]
             },
             "Wednesday": {
@@ -212,32 +60,26 @@
                     "Wednesday"
                 ],
                 "Carvery Station": [
-                    "Superfood Bowl"
+                    "Scrambled Eggs",
+                    "Country Style Biscuit and Gravy",
+                    "Hash Brown Triangles",
+                    "Pork Sausage Link"
                 ],
-                "Saute Station": [
-                    "Beef and Cheddar Smash Sliders",
-                    "Burger Patty on Slider Buns",
-                    "Cheese Sauce",
-                    "Burger Sauce",
-                    "Sautéed Onions",
-                    "Shoestring Fries",
-                    "Dill Pickle Chips"
+                "Breakfast Bar": [
+                    "French Toast Sticks",
+                    "Strawberry Sauce & Syrup",
+                    "Scrambled Eggs"
                 ],
-                "Flatbreads": [
-                    "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                "Salad Bar": [
+                    "Breakfast Yogurt Bar",
+                    "Oatmeal & Toppings"
                 ],
-                "Bakery": [
-                    "Chocolate Brownie",
-                    "Peanut Butter Cookie"
+                "Bakery Station": [
+                    "Mini Cinnamon Rolls",
+                    "Orange Blossom Muffins"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
-                    "Soup/Salad Bar",
-                    "Superfoods Bar",
-                    "Waffle Bar"
+                    "Waffles & Toppings"
                 ]
             },
             "Thursday": {
@@ -245,33 +87,24 @@
                     "Thursday"
                 ],
                 "Carvery Station": [
-                    "Beef Poutine",
-                    "Cheese Curds",
-                    "French Fries"
+                    "Scrambled Eggs",
+                    "Country Style Biscuit and Gravy",
+                    "Hash Brown Triangles",
+                    "Pork Sausage Link"
                 ],
-                "Saute Station": [
-                    "Wing Hustle",
-                    "Boneless or Traditional Wings",
-                    "Teriyaki Sauce",
-                    "Buffalo Sauce",
-                    "Umami Crunch",
-                    "Ranch"
+                "Breakfast Bar": [
+                    "Southwest Breakfast Bowl"
                 ],
-                "Flatbreads": [
-                    "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                "Salad Bar": [
+                    "Breakfast Yogurt Bar",
+                    "Oatmeal & Toppings"
                 ],
-                "Bakery": [
-                    "Sugar Cookie",
-                    "Carrot Cake with Cream Cheese Frosting"
+                "Bakery Station": [
+                    "Banana Nut Muffins",
+                    "Mini Assorted Danishes"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
-                    "Soup/Salad Bar",
-                    "Superfoods Bar",
-                    "Waffle Bar"
+                    "Waffles & Toppings"
                 ]
             },
             "Friday": {
@@ -279,43 +112,38 @@
                     "Friday"
                 ],
                 "Carvery Station": [
-                    "Alaskan Sole Sandwich",
-                    "Beer Battered Tofu",
-                    "Wedge Cut Fries"
+                    "Scrambled Eggs",
+                    "Country Style Biscuit and Gravy",
+                    "Hash Brown Triangles",
+                    "Pork Sausage Link"
                 ],
-                "Saute Station": [
-                    "Detroit Trio",
-                    "Cheese Pizza",
-                    "Pepperoni Pizza",
-                    "Sausage Pizza"
+                "Breakfast Bar": [
+                    "Florentine Egg Omelette",
+                    "Wedge Cut French Fries"
                 ],
-                "Flatbreads": [
-                    "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                "Salad Bar": [
+                    "Breakfast Yogurt Bar",
+                    "Oatmeal & Toppings"
                 ],
-                "Bakery": [
-                    "Chocolate Peanut Butter M&M Cookies",
-                    "Scotcheroos"
+                "Bakery Station": [
+                    "Assorted Mini Danishes",
+                    "Banana Nut Muffins"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
-                    "Soup/Salad Bar",
-                    "Superfoods Bar",
-                    "Waffle Bar"
+                    "Waffles & Toppings"
                 ]
             }
         }
     },
-    "wk1": {
-        "Dinner": {
+    "wk 2": {
+        "Lunch": {
             "Monday": {
-                "Day": [
+                "Day of Week": [
                     "Monday"
                 ],
                 "Carvery Station": [
-                    "Chicken Cacciatore"
+                    "Chicken Shwarma Sandwich",
+                    "Mediterranean Cous Cous Salad"
                 ],
                 "Saute Station": [
                     "Crafted Mac and Cheese",
@@ -328,28 +156,29 @@
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Chocolate Chocolate Chip Cookies",
-                    "Coconut Caramel Devil's Food Cake"
+                    "Chocolate Chip Cookies",
+                    "Apple Crisp"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
-                    "Superfoods Bar"
+                    "Superfoods Bar",
+                    "Waffle Bar"
                 ]
             },
             "Tuesday": {
-                "Day": [
+                "Day of Week": [
                     "Tuesday"
                 ],
                 "Carvery Station": [
-                    "Salisbury Steak",
-                    "Mashed Potatoes & Gravy",
-                    "Roasted Brussels Sprouts"
+                    "Philly Cheesesteak Sandwich",
+                    "Portabella Cheesesteak",
+                    "French Fries"
                 ],
                 "Saute Station": [
                     "Hot Honey Yardbird",
@@ -360,60 +189,63 @@
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Oatmeal Butterscotch Cookies",
+                    "Ginger Molasses Cookies",
                     "Rice Krispie Bars"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
-                    "Superfoods Bar"
+                    "Superfoods Bar",
+                    "Waffle Bar"
                 ]
             },
             "Wednesday": {
-                "Day": [
+                "Day of Week": [
                     "Wednesday"
                 ],
                 "Carvery Station": [
-                    "Beef Lasagna",
-                    "Vegetable Lasagna",
-                    "Garlic Breadstick"
+                    "Beef Chuck",
+                    "Wild Mushroom Risotto",
+                    "Steamed Green Beans"
                 ],
                 "Saute Station": [
                     "Beef and Cheddar Smash Sliders",
                     "Burger Patty on Slider Buns",
                     "Cheese Sauce",
                     "Burger Sauce",
-                    "Sautéed Onion",
+                    "Sautéed Onions",
                     "Shoestring Fries",
                     "Dill Pickle Chips"
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Peanut Butter Cookies",
-                    "Chocolate Brownies"
+                    "White Cake with White Frosting",
+                    "Snickers Cookies"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
-                    "Superfoods Bar"
+                    "Superfoods Bar",
+                    "Waffle Bar"
                 ]
             },
             "Thursday": {
-                "Day": [
+                "Day of Week": [
                     "Thursday"
                 ],
                 "Carvery Station": [
-                    "Rotisserie Chicken Provencal"
+                    "Chicago Dog",
+                    "Red Royale Potato Salad"
                 ],
                 "Saute Station": [
                     "Wing Hustle",
@@ -425,27 +257,29 @@
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Sugar Cookies",
-                    "Carrot Cake with Cream Cheese Frosting"
+                    "Cranberry Walnut White Chocolate Cookies",
+                    "Scotcheroos"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
-                    "Superfoods Bar"
+                    "Superfoods Bar",
+                    "Waffle Bar"
                 ]
             },
             "Friday": {
-                "Day": [
+                "Day of Week": [
                     "Friday"
                 ],
                 "Carvery Station": [
-                    "Spicy Pork Bulgogi",
-                    "Sushi Rice"
+                    "Seafood Roll",
+                    "Coleslaw",
+                    "Straight cut Fries"
                 ],
                 "Saute Station": [
                     "Detroit Trio",
@@ -455,71 +289,235 @@
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Chocolate Peanut Butter M&M Cookies",
-                    "Scotcheroos"
+                    "Chocolate Brownie",
+                    "Reese's Pieces Cookies"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
+                    "Soup/Salad Bar",
+                    "Superfoods Bar",
+                    "Waffle Bar"
+                ]
+            }
+        },
+        "Dinner": {
+            "Monday": {
+                "Day of Week": [
+                    "Monday"
+                ],
+                "Carvery Station": [
+                    "BBQ Rotisserie Chicken",
+                    "Mashed Potatoes",
+                    "Mixed Vegetables"
+                ],
+                "Saute Station": [
+                    "Crafted Mac and Cheese",
+                    "White Cheddar Cheese Sauce",
+                    "Lumache Pasta",
+                    "Cajun Chicken",
+                    "Roasted Broccoli",
+                    "Bacon Bits",
+                    "Green Onions"
+                ],
+                "Flatbreads": [
+                    "Margherita",
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
+                ],
+                "Bakery": [
+                    "Chocolate Chip Cookies",
+                    "Apple Crisp"
+                ],
+                "Other Open Stations": [
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
                     "Superfoods Bar"
                 ]
             },
-            "Sunday": {
-                "Day": [
-                    "Sunday"
+            "Tuesday": {
+                "Day of Week": [
+                    "Tuesday"
                 ],
                 "Carvery Station": [
-                    "Grilled Mediterranean Chicken",
-                    "Zucchini Noodles"
+                    "Porketta Pork Chop",
+                    "Scalloped Potatoes",
+                    "Roasted Brussels Sprouts"
                 ],
                 "Saute Station": [
-                    "Loaded Baked Potato",
-                    "Steamed Broccoli"
+                    "Hot Honey Yardbird",
+                    "Chicken Tender on a Slider Bun",
+                    "Nashville Hot Honey Butter",
+                    "Bread and Butter Pickles",
+                    "Ranch Chips"
                 ],
                 "Flatbreads": [
                     "Margherita",
-                    "Harissa Cauliflower",
-                    "Mushroom Garlic",
-                    "Zucchini Garlic"
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
                 ],
                 "Bakery": [
-                    "Double Chocolate Chip Mint Cookie",
-                    "Streusel Coffee Cake"
+                    "Ginger Molasses Cookies",
+                    "Rice Krispie Bars"
                 ],
                 "Other Open Stations": [
-                    "Grill - Taco Bowl",
+                    "Grill - Poke Bowl",
                     "Soup/Salad Bar",
                     "Superfoods Bar"
                 ]
+            },
+            "Wednesday": {
+                "Day of Week": [
+                    "Wednesday"
+                ],
+                "Carvery Station": [
+                    "Chicken Florentine Pasta Bake",
+                    "Garlic Toast",
+                    "Steamed Broccoli"
+                ],
+                "Saute Station": [
+                    "Beef and Cheddar Smash Sliders",
+                    "Burger Patty on Slider Buns",
+                    "Cheese Sauce",
+                    "Burger Sauce",
+                    "Sautéed Onions",
+                    "Shoestring Fries",
+                    "Dill Pickle Chips"
+                ],
+                "Flatbreads": [
+                    "Margherita",
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
+                ],
+                "Bakery": [
+                    "White Cake with White Frosting",
+                    "Snickers Cookies"
+                ],
+                "Other Open Stations": [
+                    "Grill - Poke Bowl",
+                    "Soup/Salad Bar",
+                    "Superfoods Bar"
+                ]
+            },
+            "Thursday": {
+                "Day of Week": [
+                    "Thursday"
+                ],
+                "Carvery Station": [
+                    "Southern Fried Chicken",
+                    "Bacon and Cheddar Mashed Potatoes",
+                    "Steamed Corn"
+                ],
+                "Saute Station": [
+                    "Wing Hustle",
+                    "Boneless or Traditional Wings",
+                    "Teriyaki Sauce",
+                    "Buffalo Sauce",
+                    "Umami Crunch",
+                    "Ranch"
+                ],
+                "Flatbreads": [
+                    "Margherita",
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
+                ],
+                "Bakery": [
+                    "Cranberry Walnut White Chocolate Cookies",
+                    "Scotcheroos"
+                ],
+                "Other Open Stations": [
+                    "Grill - Poke Bowl",
+                    "Soup/Salad Bar",
+                    "Superfoods Bar"
+                ]
+            },
+            "Friday": {
+                "Day of Week": [
+                    "Friday"
+                ],
+                "Carvery Station": [
+                    "Chicken Quesadilla"
+                ],
+                "Saute Station": [
+                    "Detroit Trio",
+                    "Cheese Pizza",
+                    "Pepperoni Pizza",
+                    "Sausage Pizza"
+                ],
+                "Flatbreads": [
+                    "Margherita",
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
+                ],
+                "Bakery": [
+                    "Jesse's Pieces Cookies",
+                    "Chocolate Brownie"
+                ],
+                "Other Open Stations": [
+                    "Grill - Poke Bowl",
+                    "Soup/Salad Bar",
+                    "Protein Plus Bar"
+                ]
+            },
+            "Sunday": {
+                "Day of Week": [
+                    "Sunday"
+                ],
+                "Carvery Station": [
+                    "Chicken Pot Pie",
+                    "Steamed Green Beans"
+                ],
+                "Saute Station": [
+                    "Carolina BBQ Pork Tenderloin",
+                    "Mashed Potatoes",
+                    "Steamed Corn"
+                ],
+                "Flatbreads": [
+                    "Margherita",
+                    "Broccoli Pesto",
+                    "Greek",
+                    "Mushroom Asparagus Gouda"
+                ],
+                "Bakery": [
+                    "Birthday Cake Cookies",
+                    "Red Velvet Cake with Cream Cheese Frosting"
+                ],
+                "Other Open Stations": [
+                    "Grill - Poke Bowl",
+                    "Soup/ Salad Bar",
+                    "Protein Plus Bar"
+                ]
             }
-        },
+        }
+    },
+    "wk2": {
         "Brunch": {
             "Sunday": {
                 "Carvery Station": [
-                    "Sausage Mushroom Egg Bake",
-                    "O'Brien Potatoes"
+                    "Chicken & Waffles"
                 ],
                 "Saute Station": [
-                    "Blueberry French Toast",
-                    "Bacon"
-                ],
-                "Unknown Station": [
-                    ""
+                    "Italian Scramble",
+                    "Cheese Enchiladas",
+                    "Chorizo Sausage"
                 ],
                 "Flatbreads Station": [
-                    "French Toast",
+                    "Belgian Waffle with Syrup",
                     "Scrambled Eggs",
-                    "Hashbrown Triangles",
-                    "Vegetarian Sausage Patties"
+                    "Vegetarian Sausage Patty"
                 ],
                 "Bakery": [
-                    "Orange Blossom Muffins",
-                    "White Frosting Yeast Donuts"
+                    "Cranberry Orange Muffins",
+                    "Glazed Donut Holes"
                 ],
                 "Other Open Stations": [
                     "Soup/Salad Bar",
